@@ -37,17 +37,16 @@ const questions = [
     }
 ];
 
-// let time = 50;
-// function writeToFile(fileName, data) {
-//     setTimeout(() => {
-//         fs.appendFile(fileName, data, (err) =>
-//             err ? console.error(err) : console.log('Success! Check readme.md')
-//         );
-//     }, time = time + 50);
-// };
+let time = 50;
+function writeToFile(fileName, data) {
+    setTimeout(() => {
+        fs.appendFile(fileName, data, (err) =>
+            err ? console.error(err) : console.log('Success! Check logo.svg')
+        );
+    }, time = time + 50);
+};
 
 function init() {
-    // Description, Instalation, Usage, Credits sections:
     inquirer
     .prompt(questions)
     .then((res) => {
@@ -56,11 +55,20 @@ function init() {
         console.log(res.charColor);
         console.log(res.shape);
         console.log(res.shapeColor);
-        fs.writeFile('logo.svg', `<text x="37" y="95" fill="white" font-size="35" fill="${res.charColor}">${res.char}</text>`, (err) =>
-            err ? console.error(err) : console.log('Success! Check readme.md')
+        fs.writeFile('logo.svg', `<svg width="500" height="500" viewBox="0 0 200 200">`, (err) =>
+            err ? console.error(err) : console.log('Success! File logo.svg has been created. Check it!')
         );
-        writeToFile('logo.svg', `${res.github}`);
-        writeToFile('logo.svg', `${res.email}`);
+        if (res.shape === 'circle') {
+            writeToFile('logo.svg', `<circle cx="80" cy="85" r="50" fill="${res.shapeColor}"/>`);
+        };
+        if (res.shape === 'triangle') {
+            writeToFile('logo.svg', `<polygon points="10, 110 190, 110 60, 10" fill="${res.shapeColor}"/>`);
+        };
+        if (res.shape === 'square') {
+            writeToFile('logo.svg', `<rect x="30" y="35" width="100" height="100" fill="${res.shapeColor}"/>`);
+        };
+        writeToFile('logo.svg', `<text x="37" y="95" fill="white" font-size="35" fill="${res.charColor}">${res.char}</text>`);
+        writeToFile('logo.svg', `</svg>`);
     }
     );
 };
