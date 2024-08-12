@@ -16,7 +16,7 @@ const questions = [
     {
         type: 'input',
         name: 'charColor',
-        message: "Enter color for characters of your future LOGO:",
+        message: "Enter characters color  of your future LOGO:",
     },
     {
         type: 'list',
@@ -33,7 +33,7 @@ const questions = [
     {
         type: 'input',
         name: 'shapeColor',
-        message: "Enter color for shape of your future LOGO:",
+        message: "Enter shape color of your future LOGO:",
     }
 ];
 
@@ -56,11 +56,11 @@ function init() {
         console.log(res.charColor);
         console.log(res.shape);
         console.log(res.shapeColor);
-        // fs.writeFile('logo.svg', `${res.char}`, (err) =>
-        //     err ? console.error(err) : console.log('Success! Check readme.md')
-        // );
-        // writeToFile('logo.svg', `${res.github}`);
-        // writeToFile('logo.svg', `${res.email}`);
+        fs.writeFile('logo.svg', `<text x="37" y="95" fill="white" font-size="35" fill="${res.charColor}">${res.char}</text>`, (err) =>
+            err ? console.error(err) : console.log('Success! Check readme.md')
+        );
+        writeToFile('logo.svg', `${res.github}`);
+        writeToFile('logo.svg', `${res.email}`);
     }
     );
 };
