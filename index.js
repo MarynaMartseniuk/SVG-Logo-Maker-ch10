@@ -67,7 +67,7 @@ function init() {
         if (res.shape === 'square') {
             writeToFile('logo.svg', `<rect x="30" y="35" width="100" height="100" fill="${res.shapeColor}"/>`);
         };
-        writeToFile('logo.svg', `<text x="37" y="95" fill="white" font-size="35" fill="${res.charColor}">${res.char}</text>`);
+        writeToFile('logo.svg', `<text x="37" y="95" font-size="35" fill="${res.charColor}">${res.char}</text>`);
         writeToFile('logo.svg', `</svg>`);
     }
     );
