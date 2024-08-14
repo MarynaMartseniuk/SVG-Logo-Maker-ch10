@@ -41,7 +41,7 @@ let time = 50;
 function writeToFile(fileName, data) {
     setTimeout(() => {
         fs.appendFile(fileName, data, (err) =>
-            err ? console.error(err) : console.log('Success! Check logo.svg')
+            err ? console.error(err) : console.log('Generated logo.svg')
         );
     }, time = time + 50);
 };
