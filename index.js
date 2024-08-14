@@ -12,6 +12,12 @@ const questions = [
         type: 'input',
         name: 'char',
         message: "Enter characters of your future LOGO (up to 3 characters):",
+        validate(answer) {
+            if (answer.length > 3) {
+              return 'You can choose no more then 3 characters. Please, type your characters again.';
+            }
+             return true;
+          },
     },
     {
         type: 'input',
