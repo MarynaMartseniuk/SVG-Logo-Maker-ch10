@@ -56,15 +56,14 @@ function init() {
     inquirer
     .prompt(questions)
     .then((res) => {
-        console.log(res);
-        console.log(res.char);
-        console.log(res.charColor);
-        console.log(res.shape);
-        console.log(res.shapeColor);
+        // console.log(res);
+        // console.log(res.char);
+        // console.log(res.charColor);
+        // console.log(res.shape);
+        // console.log(res.shapeColor);
 
         //write the <svg> open tag to logo.svg
-        // writeToFile('logo.svg', `<svg width="500" height="500" viewBox="0 0 200 200">`);
-
+        
         fs.writeFile('logo.svg', `<svg width="500" height="500" viewBox="0 0 200 200">`, (err) =>
             err ? console.error(err) : console.log('Generated logo.svg')
         );
@@ -72,32 +71,22 @@ function init() {
         // write a requested by user shape data to logo.svg
         if (res.shape === 'square') {
             const shape = new Square(res.shape, res.shapeColor);
-            console.log(`created: ${shape.createSquare()}`);
+            // console.log(`created: ${shape.createSquare()}`);
             writeToFile('logo.svg', `${shape.createSquare()}`);
         };
 
         if (res.shape === 'circle') {
             const shape = new Circle(res.shape, res.shapeColor);
-            console.log(`created: ${shape.createCircle()}`);
+            // console.log(`created: ${shape.createCircle()}`);
             writeToFile('logo.svg', `${shape.createCircle()}`);
         };
 
         if (res.shape === 'triangle') {
             const shape = new Triangle(res.shape, res.shapeColor);
-            console.log(`created: ${shape.createTriangle()}`);
+            // console.log(`created: ${shape.createTriangle()}`);
             writeToFile('logo.svg', `${shape.createTriangle()}`);
         };
-
-        // if (res.shape === 'circle') {
-        //     writeToFile('logo.svg', `<circle cx="80" cy="85" r="50" fill="${res.shapeColor}"/>`);
-        // };
-        // if (res.shape === 'triangle') {
-        //     writeToFile('logo.svg', `<polygon points="10, 110 190, 110 60, 10" fill="${res.shapeColor}"/>`);
-        // };
-        // if (res.shape === 'square') {
-        //     writeToFile('logo.svg', `<rect x="30" y="35" width="100" height="100" fill="${res.shapeColor}"/>`);
-        // };
-
+        
         // write a requested by user character data  to logo.svg
         writeToFile('logo.svg', `<text x="37" y="95" font-size="35" fill="${res.charColor}">${res.char}</text>`);
 
