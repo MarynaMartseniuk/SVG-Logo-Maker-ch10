@@ -21,6 +21,8 @@ SVG-Logo-Maker is a Node.js command-line application that takes in user input to
 ## Credits
 1. source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Basic_Shapes
 2. source: https://www.w3schools.com/graphics/svg_inhtml.asp
+3. logo size code source: https://www.youtube.com/watch?v=TBYJ2V1jAlA&list=PL4-IK0AVhVjP0EeV513_b30lhGRTfMbYd&index=3 , channel @KevinPowell
+4. logo size code source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Positions
 
 ## License
 

@@ -63,8 +63,10 @@ function init() {
         // console.log(res.shapeColor);
 
         //write the <svg> open tag to logo.svg
+        //  logo size code source: https://www.youtube.com/watch?v=TBYJ2V1jAlA&list=PL4-IK0AVhVjP0EeV513_b30lhGRTfMbYd&index=3 , channel @KevinPowell
+        // logo size code source: https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Positions
         
-        fs.writeFile('logo.svg', `<svg width="500" height="500" viewBox="0 0 200 200">`, (err) =>
+        fs.writeFile('logo.svg', `<svg width="300" height="200" viewBox="0 0 300 200">`, (err) =>
             err ? console.error(err) : console.log('Generated logo.svg')
         );
 
@@ -88,7 +90,7 @@ function init() {
         };
         
         // write a requested by user character data  to logo.svg
-        writeToFile('logo.svg', `<text x="37" y="95" font-size="35" fill="${res.charColor}">${res.char}</text>`);
+        writeToFile('logo.svg', `<text x="80" y="117" font-size="60" fill="${res.charColor}">${res.char}</text>`);
 
         // write the <svg> close tag to logo.svg
         writeToFile('logo.svg', `</svg>`);
