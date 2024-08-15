@@ -55,5 +55,5 @@ SVG-Logo-Maker is a Node.js command-line application that takes in user input to
 ### To run test:
 1. go to the folder with the code;
 2. first run "npm i" to install Jest package in a Command Line;
-3. second run "node run test";
+3. second run "npm run test";
 4. the esults of tests will appear in a Command Line.
