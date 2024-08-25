@@ -21,7 +21,8 @@ SVG-Logo-Maker is a Node.js command-line application that takes in user input to
 
 ## Usage
 1. go to the folder with the code;
-3. run "node index.js";
+2. run ""npm install" to buid the App;
+3. run "node server.js" to start the App;
 4. answer all questions that App will ask you;
 5. after this is done the logo.svg file will appear in the same folder where the code is saved.
 
